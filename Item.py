@@ -33,7 +33,8 @@ class Item:
         """
         parsing items dataframe to property, available, and category dataframe.
         """
-        df = df.withColumn('created_at', from_unixtime(df.timestamp / 1000, "yyyy-MM-dd HH:mm:ss")).drop(*['timestamp'])
+        date_format = "yyyy-MM-dd HH:mm:ss"
+        df = df.withColumn('created_at', from_unixtime(df.timestamp / 1000, date_format)).drop(*['timestamp'])
 
         # todo un-stem property from n35.000 to 35
         # todo deconde encoded property, value
