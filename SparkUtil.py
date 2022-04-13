@@ -1,7 +1,5 @@
 import logging
-region = "eu-west-1"
-aws_access_key = "aws_access_key"
-aws_secret_access_key = "aws_secret_access_key"
+from . import aws_access_key, aws_secret_access_key, region
 
 
 class SparkUtil:
